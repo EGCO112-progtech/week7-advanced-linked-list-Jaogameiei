@@ -19,10 +19,8 @@ int main(void) {
    while (choice != 3) { 
       switch (choice) { 
          case 1:
-            printf("%s", "Enter student ID: ");
-            scanf("%d", &studentID);
-            printf("%s", "Enter student name: ");
-            scanf("%s", studentName);
+            printf("%s", "Enter student ID and name: ");
+            scanf("%d %s", &studentID,studentName);
             insert(&startPtr, studentID, studentName);
             printList(startPtr);
             printListR(startPtr);
