@@ -121,39 +121,38 @@ int isEmpty(LLPtr sPtr) {
 void printList(LLPtr currentPtr) {
     // if list is empty
     if (isEmpty(currentPtr)) {
-        puts("List is empty.\n");
-    } // end if
-    else {
+        puts("List is empty.");
+    } else {
         puts("The list is:");
-        // while not the end of the list
+        
+        // traverse the list
         while (currentPtr != NULL) {
             printf("%d %s --> ", currentPtr->data, currentPtr->name);
             currentPtr = currentPtr->nextPtr;
-        } // end while
-
+        }
         printf("NULL\n");
-    } // end else
-} // end function printList
-
+    }
+}
 // print the list in reverse
-void printListR(LLPtr currentPtr)
-{
-    // Base case: if list is empty or we've reached the end
+void printListR(LLPtr currentPtr) {
+    // Traverse to the last node
     if (currentPtr == NULL) {
-        printf("List is empty\n");
+        //printf("List is empty\n");
         return;
     }
-    else{
-      //puts("List reverse is:");
-      while(currentPtr->nextPtr != NULL){
-         currentPtr = currentPtr->nextPtr;
-      }
-      
-      while(currentPtr != NULL){
-        printf("%d %s -> ", currentPtr->data, currentPtr->name);
-         currentPtr = currentPtr->pPtr;
-      }
-      printf("NULL\n");
+
+    puts("List reverse is:");
+
+    // Traverse to the last node
+    while (currentPtr->nextPtr != NULL) {
+        currentPtr = currentPtr->nextPtr;
     }
-    
-   }
+
+    // Print in reverse order using the pPtr (previous pointer)
+    while (currentPtr != NULL) {
+        printf("%d %s -> ", currentPtr->data, currentPtr->name);
+        currentPtr = currentPtr->pPtr;
+    }
+
+    printf("NULL\n");
+}
