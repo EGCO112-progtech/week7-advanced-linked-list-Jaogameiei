@@ -141,7 +141,7 @@ void printListR(LLPtr currentPtr) {
         return;
     }
 
-    puts("List reverse is:");
+    //puts("List reverse is:");
 
     // Traverse to the last node
     while (currentPtr->nextPtr != NULL) {
