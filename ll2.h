@@ -129,7 +129,7 @@ void printList(LLPtr currentPtr) {
         
         // traverse the list
         while (currentPtr != NULL) {
-            printf("%d %s --> ", currentPtr->data, currentPtr->name);
+            printf("%d %s -->", currentPtr->data, currentPtr->name);
             currentPtr = currentPtr->nextPtr;
         }
         printf("NULL\n");
