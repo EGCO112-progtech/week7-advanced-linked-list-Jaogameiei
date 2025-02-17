@@ -137,7 +137,7 @@ void printList(LLPtr currentPtr) {
 void printListR(LLPtr currentPtr) {
     // Traverse to the last node
     if (currentPtr == NULL) {
-        //printf("List is empty\n");
+        printf("List is empty\n");
         return;
     }
 
@@ -150,7 +150,7 @@ void printListR(LLPtr currentPtr) {
 
     // Print in reverse order using the pPtr (previous pointer)
     while (currentPtr != NULL) {
-        printf("%d %s -> ", currentPtr->data, currentPtr->name);
+        printf("%d %s --> ", currentPtr->data, currentPtr->name);
         currentPtr = currentPtr->pPtr;
     }
 
