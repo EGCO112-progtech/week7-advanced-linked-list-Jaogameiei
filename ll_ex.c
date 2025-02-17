@@ -2,14 +2,12 @@
 // Inserting and deleting nodes in a list
 #include <stdio.h>
 #include <stdlib.h>
-#include "ll2.h"
+#include "ll.h"
 
 int main(void) { 
    LLPtr startPtr = NULL; // initially there are no nodes
    unsigned int choice; // user's choice
    int item; // char entered by user
-   int studentID; // student ID
-   char studentName[50];
 
    instructions(); // display the menu
    printf("%s", "? ");
@@ -19,11 +17,9 @@ int main(void) {
    while (choice != 3) { 
       switch (choice) { 
          case 1:
-            printf("%s", "Enter student ID: ");
-            scanf("%d", &studentID);
-            printf("%s", "Enter student name: ");
-            scanf("%s", studentName);
-            insert(&startPtr, studentID, studentName);
+            printf("%s", "Enter a number: ");
+            scanf("%d", &item);
+            insert(&startPtr, item); // insert item in list
             printList(startPtr);
             printListR(startPtr);
             break;
