@@ -20,6 +20,7 @@ void insert(LLPtr *sPtr, int value, char *name);
 void printList(LLPtr currentPtr);
 void printListR(LLPtr currentPtr);
 void instructions(void);
+void clearList(LLPtr *sPtr);
 
 // display program instructions to user
 void instructions(void) {
@@ -112,6 +113,7 @@ int deletes(LLPtr *sPtr, int value) {
     return -1; // return -1 if value was not found
 }
 
+
 // check if the list is empty
 int isEmpty(LLPtr sPtr) {
     return sPtr == NULL;
@@ -150,9 +152,29 @@ void printListR(LLPtr currentPtr) {
 
     // Print in reverse order using the pPtr (previous pointer)
     while (currentPtr != NULL) {
-        printf("%d %s --> ", currentPtr->data, currentPtr->name);
+        printf("%d %s -->", currentPtr->data, currentPtr->name);
         currentPtr = currentPtr->pPtr;
     }
 
     printf("NULL\n");
+}
+void clearList(LLPtr *sPtr) {
+    LLPtr currentPtr = *sPtr;
+    LLPtr tempPtr;
+    printf("Clear all nodes\n");
+    // Loop until the list is empty
+    while (currentPtr != NULL && currentPtr->nextPtr != NULL) {
+        currentPtr = currentPtr->nextPtr;
+    }
+
+    // Delete nodes in reverse order
+    while (currentPtr != NULL) {
+        tempPtr = currentPtr;  // Hold the current node
+        currentPtr = currentPtr->pPtr;  // Move to the previous node
+
+        printf("Deleted %d\n", tempPtr->data);  // Print the deleted node's value
+        free(tempPtr);  // Free the memory of the old node
+    }
+    
+    *sPtr = NULL;  // List is now empty
 }

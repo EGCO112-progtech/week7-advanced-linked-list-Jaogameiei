@@ -44,6 +44,10 @@ int main(void) {
                puts("List is empty.\n");
             } // end else
             break;
+            case 3:  // Clear all nodes and end
+            clearList(&startPtr);  // clear the list
+            puts("End of run.");
+            break;
          default:
             puts("Invalid choice.\n");
             instructions();
@@ -55,5 +59,6 @@ int main(void) {
    } // end while
 
    /* Clear all nodes at the end of nodes */
+   clearList(&startPtr);
    puts("End of run.");
 } // end main
