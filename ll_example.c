@@ -24,7 +24,7 @@ int main(void) {
             scanf("%d %s", &studentID,studentName);
             insert(&startPtr, studentID, studentName);
             printList(startPtr);
-            //printListR(startPtr);
+            printListR(startPtr);
             break;
          case 2: // delete an element
             // if list is not empty
@@ -36,7 +36,7 @@ int main(void) {
                if (deletes(&startPtr, item)) { // remove item
                   printf("%d deleted.\n", item);
                   printList(startPtr);
-                  //printListR(startPtr);
+                  printListR(startPtr);
                } else {
                   printf("%d not found.\n\n", item);
                } // end else
